@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PI: Update Values</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../css/bootstrap.min.css">
+<!-- <link rel="stylesheet" type="text/css" media="all"
+	href="../css/main.css"> -->
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+<script
+	src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="../js/libraries/bootstrap.min.js"></script>
+<script src="../js/formSubmitter.js"></script>
+</head>
+<body>
+	<div class="main-view">
+		<div class="col-md-12">
+			<h2>Set Values</h2>
+			<hr>
+			<div>
+				<button type="button" class="btn btn-primary custom-song-button"
+					id="submitButton">Submit</button>
+
+			</div>
+			<table class="table table-hover values-table">
+				<thead>
+					<th>Label</th>
+					<th>Current Value</th>
+					<th>Last Month</th>
+					<th>Goal</th>
+				</thead>
+				<tbody class="values">
+					<tr class="precinctRev">
+						<td>Message</td>
+						<td><input type="text" class="form-control"
+							id="precinctRev_current" placeholder="Current Rev" /></td>
+						<td><input type="text" class="form-control"
+							id="precinctRev_month" placeholder="Last Month Rev" /></td>
+						<td><input type="text" class="form-control"
+							id="precinctRev_goal" placeholder="Rev Goal" /></td>
+					</tr>
+					<tr class="monthlyBudget">
+						<td>Budget</td>
+						<td><input type="text" class="form-control"
+							id="budget_current" placeholder="Current Budget" /></td>
+						<td><input type="text" class="form-control"
+							id="budget_month" placeholder="Last Month Budget" /></td>
+						<td><input type="text" class="form-control"
+							id="budget_goal" placeholder="Budget Goal" /></td>
+					</tr>
+					<tr class="nps">
+						<td>NPS</td>
+						<td><input type="text" class="form-control"
+							id="nps_current" placeholder="Current NPS" /></td>
+						<td><input type="text" class="form-control"
+							id="nps_month" placeholder="Last Month NPS" /></td>
+						<td><input type="text" class="form-control"
+							id="nps_goal" placeholder="NPS Goal" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- /.modal -->
+	</div>
+
+</body>
+</html>
