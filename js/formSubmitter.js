@@ -3,46 +3,78 @@
  */
 var msg
 var json_string;
+var currentID;
 
-$('document').ready(function() {
+$('document')
+		.ready(
+				function() {
 
-	/**
-	 * Erases the list and gets errors
-	 */
-	function sendVals() {
-		console.log(json_string);
-		$.ajax({
-			type : "GET",
-			data : {
-				'msg' : json_string
-			},
-			url : "../php/testScript.php"
-		});
-	}
+					currentID = 0;
 
-	function packageVals() {
-		var json_object = {
-			PrecinctRevGoal : {
-				current : $('#precinctRev_current').val(),
-				month : $('#precinctRev_month').val(),
-				goal : $('#precinctRev_goal').val()
-			},
-			MonthlyBudget : {
-				current : $('#budget_current').val(),
-				month : $('#budget_month').val(),
-				goal : $('#budget_goal').val()
-			},
-			NPS : {
-				current : $('#nps_current').val(),
-				month : $('#nps_month').val(),
-				goal : $('#budget_goal').val()
-			}
-		}
-		json_string = JSON.stringify(json_object);
-	}
+					/**
+					 * Erases the list and gets errors
+					 */
+					function sendVals() {
+						console.log(json_string);
+						$.ajax({
+							type : "GET",
+							data : {
+								'msg' : json_string
+							},
+							url : "../php/testScript.php"
+						});
+					}
 
-	$(document).on('click', '#submitButton', function(evt) {
-		packageVals();
-		sendVals();
-	})
-});
+					function packageVals() {
+						var i;
+
+						var json = {
+							values : {}
+						}
+
+						for (i = 0; i < currentID; i++) {
+							var json_item = {
+								name : $('#name_' + i).val(),
+								current : $('#current_' + i).val(),
+								month : $('#month_' + i).val(),
+								goal : $('#goal_' + i).val(),
+								met : $('#goalMet_' + i).is(":checked")
+							}
+							// console.log(JSON.stringify(json_item));
+							json.values[i] = json_item;
+						}
+
+						json_string = JSON.stringify(json);
+					}
+
+					function addRow() {
+						var html = '<tr class="item"><td><input type="text" class="form-control" id="name_'
+								+ currentID
+								+ '" placeholder="Name" /></td><td><input type="text" class="form-control" id="current_'
+								+ currentID
+								+ '" placeholder="Current Value" /></td><td><input type="text" class="form-control"id="month_'
+								+ currentID
+								+ '" placeholder="Last Month Value" /></td><td><input type="text" class="form-control" id="goal_'
+								+ currentID
+								+ '" placeholder="Goal" /></td><td><input type="checkbox" class="form-control" id="goalMet_'
+								+ currentID
+								+ '"></td><td><button type="button" class="btn btn-primary" id="removeButton" value='
+								+ currentID + '">-</button></td></tr>'
+						$('.values').append(html);
+						currentID++;
+					}
+
+					$(document).on('click', '#submitButton', function(evt) {
+						packageVals();
+						sendVals();
+					})
+
+					$(document).on('click', '#addButton', function(evt) {
+						addRow();
+					})
+					
+					$(document).on('click', '#removeButton', function(evt){
+						console.log("remove");
+					})
+
+				});
