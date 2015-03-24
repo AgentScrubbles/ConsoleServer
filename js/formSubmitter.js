@@ -72,8 +72,8 @@ $('document')
 					$(document).on('click', '#addButton', function(evt) {
 						addRow();
 					})
-					
-					$(document).on('click', '#removeButton', function(evt){
+
+					$(document).on('click', '#removeButton', function(evt) {
 						console.log("remove");
 					})
 
