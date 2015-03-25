@@ -1,48 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>PI: Update Values</title>
-<link rel="stylesheet" type="text/css" media="all"
-	href="../css/bootstrap.min.css">
-<!-- <link rel="stylesheet" type="text/css" media="all"
-	href="../css/main.css"> -->
-<script
-	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<link rel="stylesheet"
-	href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-<script
-	src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<script src="../js/libraries/bootstrap.min.js"></script>
-</head>
-<body>
-	<div class="main-view">
-		<div class="col-md-12">
-			<h2>Set Values</h2>
-			<hr>
-			<div>
-				<button type="button" class="btn btn-primary custom-song-button"
-					id="submitButton">Submit</button>
-					<button type="button" class="btn btn-primary custom-song-button"
-					id="addButton">Add Row</button>
 
-			</div>
-			<table class="table table-hover values-table">
-				<thead>
-					<th>Name</th>
-					<th>Current Value</th>
-					<th>Last Month</th>
-					<th>Goal</th>
-					<th>Met Goal?</th>
-					<th>Remove</th>
-				</thead>
-				<tbody class="values" id="mainPanel">
-					
-				</tbody>
-			</table>
+
+<div class="main-view">
+	<div class="col-md-12">
+		<h2>Set Values</h2>
+		<hr>
+		<div>
+			<button type="button" class="btn btn-primary gs-button gs-button-big"
+				id="submitButton">Submit</button>
+			<button type="button" class="btn btn-primary gs-button gs-button-big"
+				id="addButton">Add Row</button>
+			<button type="button" class="btn btn-primary gs-button gs-button-big"
+				id="backButton">Back</button>
+
 		</div>
-		<!-- /.modal -->
-	</div>
+		<table class="table table-hover values-table">
+			<thead>
+				<th>Name</th>
+				<th>Current Value</th>
+				<th>Last Month</th>
+				<th>Goal</th>
+				<th>Met Goal?</th>
+				<th>Remove</th>
+			</thead>
+			<tbody class="values" id="mainPanel">
 
-</body>
-</html>
+			</tbody>
+		</table>
+	</div>
+	<!-- /.modal -->
+</div>

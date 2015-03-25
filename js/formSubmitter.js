@@ -58,7 +58,7 @@ $('document')
 								+ currentID
 								+ '" placeholder="Goal" /></td><td><input type="checkbox" class="form-control" id="goalMet_'
 								+ currentID
-								+ '"></td><td><button type="button" class="btn btn-primary" id="removeButton" value='
+								+ '"></td><td><button type="button" class="btn btn-primary gs-button" id="removeButton" value='
 								+ currentID + '">-</button></td></tr>'
 						$('.values').append(html);
 						currentID++;
@@ -75,6 +75,20 @@ $('document')
 
 					$(document).on('click', '#removeButton', function(evt) {
 						console.log("remove");
+					})
+
+					$(document).on('click', '#backButton', function(evt) {
+
+						$.ajax({
+							url : '../index.html',
+							type : 'POST',
+							success : function() {
+							}
+						}).done(function(html) {
+							$("#main_body").html(html);
+							$("#main_body").css("height", "initial");
+						});
+						console.log("changeValues");
 					})
 
 				});
